@@ -17,7 +17,7 @@ public class FizzBuzz {
     }
 
     private static boolean isDivisibleBy3AndBy5(int number) {
-        return number % 5 == 0 && number % 3 == 0;
+        return isDivisibleBy3(number) && isDivisibleBy5(number);
     }
 
     private static boolean isDivisibleBy5(int number) {
