@@ -24,18 +24,10 @@ class FizzBuzzTest {
         Assertions.assertEquals("Buzz", result);
     }
 
-    @Test
-    void should_return_fizzbuzz_when_number_is_15() {
+    @ParameterizedTest(name = "#{index} - should return fizzbuzz when number is {0}")
+    @ValueSource(ints = {15, 30, 45})
+    void should_return_fizzbuzz_when_number_is_divisible_by_5_and_by_3() {
         int number = 15;
-
-        String result = FizzBuzz.isFizzBuzzNumber(number);
-
-        Assertions.assertEquals("FizzBuzz", result);
-    }
-
-    @Test
-    void should_return_fizzbuzz_when_number_is_30() {
-        int number = 30;
 
         String result = FizzBuzz.isFizzBuzzNumber(number);
 
