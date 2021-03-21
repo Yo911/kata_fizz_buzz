@@ -33,4 +33,13 @@ class FizzBuzzTest {
         Assertions.assertEquals("FizzBuzz", result);
     }
 
+    @Test
+    void should_return_fizzbuzz_when_number_is_30() {
+        int number = 30;
+
+        String result = FizzBuzz.isFizzBuzzNumber(number);
+
+        Assertions.assertEquals("FizzBuzz", result);
+    }
+
 }
