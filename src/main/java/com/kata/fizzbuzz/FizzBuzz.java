@@ -6,10 +6,14 @@ public class FizzBuzz {
         if (isDivisibleBy3AndBy5(number)) {
             return "FizzBuzz";
         }
-        if (number == 3 || number == 6) {
+        if (isDivisibleBy3(number)) {
             return "Fizz";
         }
         return isDivisibleBy5(number) ? "Buzz" : "";
+    }
+
+    private static boolean isDivisibleBy3(int number) {
+        return number % 3 == 0;
     }
 
     private static boolean isDivisibleBy3AndBy5(int number) {
