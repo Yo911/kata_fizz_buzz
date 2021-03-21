@@ -14,4 +14,13 @@ class FizzBuzzTest {
         Assertions.assertEquals("Fizz", result);
     }
 
+    @Test
+    void should_return_buzz_when_number_is_5() {
+        int number = 5;
+
+        String result = FizzBuzz.isFizzBuzzNumber(number);
+
+        Assertions.assertEquals("Buzz", result);
+    }
+
 }
