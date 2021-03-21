@@ -6,7 +6,7 @@ public class FizzBuzz {
         if (isDivisibleBy3AndBy5(number)) {
             return "FizzBuzz";
         }
-        if (number == 3) {
+        if (number == 3 || number == 6) {
             return "Fizz";
         }
         return isDivisibleBy5(number) ? "Buzz" : "";
