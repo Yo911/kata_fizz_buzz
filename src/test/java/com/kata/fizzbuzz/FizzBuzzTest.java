@@ -34,4 +34,12 @@ class FizzBuzzTest {
         Assertions.assertEquals("FizzBuzz", result);
     }
 
+    @Test
+    void should_return_empty_string_when_number_is_4() {
+        int number = 4;
+
+        String result = FizzBuzz.isFizzBuzzNumber(number);
+
+        Assertions.assertEquals("", result);
+    }
 }
