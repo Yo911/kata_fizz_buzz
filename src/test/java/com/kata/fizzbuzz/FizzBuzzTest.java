@@ -17,11 +17,20 @@ class FizzBuzzTest {
     }
 
     @ParameterizedTest(name = "#{index} - should return buzz when number is {0}")
-    @ValueSource(ints = {5, 10, 15, 20, 25})
+    @ValueSource(ints = {5, 10, 20, 25})
     void should_return_buzz_when_number_is_divisible_by_5(int number) {
         String result = FizzBuzz.isFizzBuzzNumber(number);
 
         Assertions.assertEquals("Buzz", result);
+    }
+
+    @Test
+    void should_return_fizzbuzz_when_number_is_15() {
+        int number = 15;
+
+        String result = FizzBuzz.isFizzBuzzNumber(number);
+
+        Assertions.assertEquals("FizzBuzz", result);
     }
 
 }
