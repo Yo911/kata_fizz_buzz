@@ -35,22 +35,26 @@ public class Fraction {
     }
 
     public void add(Fraction fraction2) {
-        int gcd = gcd(this.denominator, fraction2.denominator);
-        Fraction fractionCommon = new Fraction(
-                this.numerator / gcd,
-                this.denominator / gcd
-        );
-        fractionCommon.denominator = this.denominator * fraction2.denominator / fractionCommon.denominator;
+        int commonDenominator = getCommonDenominator(fraction2);
 
-        int numerator1 = this.numerator * (fractionCommon.denominator / this.denominator);
-        int numerator2 = fraction2.numerator * (fractionCommon.denominator / fraction2.denominator);
-        fractionCommon.numerator = numerator1 + numerator2;
+        int numerator1 = getConvertedNumerator(commonDenominator);
+        int numerator2 = fraction2.getConvertedNumerator(commonDenominator);
 
-        this.numerator = fractionCommon.numerator;
-        this.denominator = fractionCommon.denominator;
+        this.numerator = numerator1 + numerator2;
+        this.denominator = commonDenominator;
 
-        gcd = gcd(this.numerator, this.denominator);
+        int gcd = gcd(this.numerator, this.denominator);
         this.denominator = this.denominator / gcd;
         this.numerator = this.numerator / gcd;
+    }
+
+    private int getCommonDenominator(Fraction fraction2) {
+        int gcd = gcd(this.denominator, fraction2.denominator);
+        int commonDenominator = this.denominator / gcd;
+        return this.denominator * fraction2.denominator / commonDenominator;
+    }
+
+    private int getConvertedNumerator(int commonDenominator) {
+        return this.numerator * (commonDenominator / this.denominator);
     }
 }
