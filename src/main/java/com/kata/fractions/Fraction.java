@@ -23,17 +23,6 @@ public class Fraction {
         return b == 0 ? a : gcd(b, a % b);
     }
 
-    void lowest()
-    {
-        // Finding gcd of both terms
-        int common_factor = gcd(this.numerator, this.denominator);
-
-        // Converting both terms into simpler
-        // terms by dividing them by common factor
-        this.denominator = this.denominator/common_factor;
-        this.numerator = this.numerator/common_factor;
-    }
-
     public void add(Fraction fraction2) {
         int commonDenominator = getCommonDenominator(fraction2);
 
@@ -43,6 +32,10 @@ public class Fraction {
         this.numerator = numerator1 + numerator2;
         this.denominator = commonDenominator;
 
+        lowest();
+    }
+
+    private void lowest() {
         int gcd = gcd(this.numerator, this.denominator);
         this.denominator = this.denominator / gcd;
         this.numerator = this.numerator / gcd;
