@@ -24,4 +24,11 @@ public class ScoreTest {
 
         Assertions.assertEquals("Fifteen", value);
     }
+
+    @Test
+    void should_return_thirty_when_three_point_score() {
+        String value = Score.getScore(3);
+
+        Assertions.assertEquals("Thirty", value);
+    }
 }
