@@ -26,15 +26,22 @@ class DiamondTest {
 
     @Test
     void should_print_diamond_with_A_letter() {
-        Diamond.printDiamond('A');
+        Diamond.printDiamond("A");
 
         Assertions.assertEquals("A", outContent.toString());
     }
 
     @Test
     void should_print_diamond_with_B_letter() {
-        Diamond.printDiamond('B');
+        Diamond.printDiamond("B");
 
-        Assertions.assertEquals("\tA\t\nB\t\tB\n\tA", outContent.toString());
+        Assertions.assertEquals("\tA\nB\t\tB\n\tA", outContent.toString());
+    }
+
+    @Test
+    void should_print_diamond_with_C_letter() {
+        Diamond.printDiamond("C");
+
+        Assertions.assertEquals("\t\t\tA\n\t\tB\t\tB\n\tC\t\t\t\tC\n\t\tB\t\tB\n\t\t\tA", outContent.toString());
     }
 }
