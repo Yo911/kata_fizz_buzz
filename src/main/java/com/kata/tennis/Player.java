@@ -1,2 +1,4 @@
-package com.kata.tennis;public class Player {
+package com.kata.tennis;
+
+public class Player {
 }
