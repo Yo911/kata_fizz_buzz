@@ -14,6 +14,9 @@ public class Game {
         if (playerOne.getPoint() == 4 && playerTwo.getPoint() == 3) {
             return playerOne.getName() + ": Advantage";
         }
+        if (playerOne.getPoint() == 3 && playerTwo.getPoint() == 4) {
+            return playerTwo.getName() + ": Advantage";
+        }
         if (isDeuceScore()) {
             return "Deuce";
         }

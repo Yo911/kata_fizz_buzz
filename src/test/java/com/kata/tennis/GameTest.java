@@ -59,6 +59,21 @@ class GameTest {
         playerTwo.addPoint();
         String score = game.showScore();
 
-        Assertions.assertEquals("Player one: Advantage", score);
+        Assertions.assertEquals(playerOne.getName() + ": Advantage", score);
+    }
+
+    @Test
+    void should_return_advantage_when_player_two_have_4_points_and_player_one_have_3_points() {
+        playerOne.addPoint();
+        playerOne.addPoint();
+        playerOne.addPoint();
+
+        playerTwo.addPoint();
+        playerTwo.addPoint();
+        playerTwo.addPoint();
+        playerTwo.addPoint();
+        String score = game.showScore();
+
+        Assertions.assertEquals(playerTwo.getName() + ": Advantage", score);
     }
 }
