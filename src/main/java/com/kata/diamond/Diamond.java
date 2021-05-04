@@ -23,21 +23,11 @@ public class Diamond {
         StringBuilder diamondBuilder = new StringBuilder();
         char currentChar = FIRST_CHAR;
         for (int i = 0; i < lengthDiamond; i++) {
-            if (i == 0) {
-                diamondBuilder.append(TAB.repeat(lengthDiamond)).append(currentChar).append(LINE);
-                currentChar++;
-                continue;
-            }
             buildLineCurrentCharacter(lengthDiamond, diamondBuilder, currentChar, i);
             currentChar++;
         }
         currentChar = (char) (FIRST_CHAR + lengthDiamond - 2);
         for (int i = lengthDiamond - 2; i >= 0; i--) {
-            if (i == 0) {
-                diamondBuilder.append(TAB.repeat(lengthDiamond)).append(currentChar).append(LINE);
-                currentChar--;
-                continue;
-            }
             buildLineCurrentCharacter(lengthDiamond, diamondBuilder, currentChar, i);
             currentChar--;
         }
@@ -45,6 +35,10 @@ public class Diamond {
     }
 
     private static void buildLineCurrentCharacter(int lengthDiamond, StringBuilder diamondBuilder, char currentChar, int i) {
+        if (i == 0) {
+            diamondBuilder.append(TAB.repeat(lengthDiamond)).append(currentChar).append(LINE);
+            return;
+        }
         diamondBuilder.append(TAB.repeat(lengthDiamond - i)).append(currentChar).append(TAB.repeat(i * 2)).append(currentChar).append(LINE);
     }
 
