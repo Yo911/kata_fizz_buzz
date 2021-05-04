@@ -17,4 +17,11 @@ public class ScoreTest {
 
         Assertions.assertEquals("Love", value);
     }
+
+    @Test
+    void should_return_fifteen_when_two_point_score() {
+        String value = Score.getScore(2);
+
+        Assertions.assertEquals("Fifteen", value);
+    }
 }
