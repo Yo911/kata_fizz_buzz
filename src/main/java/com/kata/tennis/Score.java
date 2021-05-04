@@ -14,7 +14,7 @@ public class Score {
         points.put(3, "Thirty");
         points.put(4, "Forty");
     }
-    
+
     public static String getScore(int point) {
         return points.get(point);
     }

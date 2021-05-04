@@ -12,10 +12,9 @@
 |===
 2+| Class: Player
 |should return the score of player
-.2+|Score
+.2+|Nothing
 
 |increment score
-|
 |===
 
 
