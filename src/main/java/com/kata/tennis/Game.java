@@ -11,11 +11,8 @@ public class Game {
     }
 
     public String showScore() {
-        if (playerOne.getPoint() == 4 && playerTwo.getPoint() == 3) {
-            return playerOne.getName() + ": Advantage";
-        }
-        if (playerOne.getPoint() == 3 && playerTwo.getPoint() == 4) {
-            return playerTwo.getName() + ": Advantage";
+        if (playerOne.getPoint() + playerTwo.getPoint() == 7) {
+            return advantage();
         }
         if (isDeuceScore()) {
             return "Deuce";
@@ -25,5 +22,10 @@ public class Game {
 
     private boolean isDeuceScore() {
         return playerOne.getPoint() == 3 && playerTwo.getPoint() == 3;
+    }
+
+    private String advantage() {
+        String playerName = playerOne.getPoint() > playerTwo.getPoint() ? playerOne.getName() : playerTwo.getName();
+        return playerName + ": Advantage";
     }
 }
