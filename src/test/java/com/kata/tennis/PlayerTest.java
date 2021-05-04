@@ -18,4 +18,12 @@ class PlayerTest {
 
         Assertions.assertEquals("0", score);
     }
+
+    @Test
+    void should_return_love_when_have_one_point() {
+        player.addPoint();
+        String score = player.getScore();
+
+        Assertions.assertEquals("Love", score);
+    }
 }
