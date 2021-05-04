@@ -32,4 +32,18 @@ class GameTest {
 
         Assertions.assertEquals("Love : 0", score);
     }
+
+    @Test
+    void should_return_deuce_when_each_player_have_three_points() {
+        playerOne.addPoint();
+        playerOne.addPoint();
+        playerOne.addPoint();
+
+        playerTwo.addPoint();
+        playerTwo.addPoint();
+        playerTwo.addPoint();
+        String score = game.showScore();
+
+        Assertions.assertEquals("Deuce", score);
+    }
 }
