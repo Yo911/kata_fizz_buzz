@@ -26,4 +26,13 @@ class PlayerTest {
 
         Assertions.assertEquals("Love", score);
     }
+
+    @Test
+    void should_return_fifteen_when_have_two_points() {
+        player.addPoint();
+        player.addPoint();
+        String score = player.getScore();
+
+        Assertions.assertEquals("Fifteen", score);
+    }
 }
