@@ -11,6 +11,9 @@ public class Game {
     }
 
     public String showScore() {
+        if (playerOne.getPoint() == 4 && playerTwo.getPoint() == 3) {
+            return playerOne.getName() + ": Advantage";
+        }
         if (isDeuceScore()) {
             return "Deuce";
         }

@@ -13,8 +13,8 @@ class GameTest {
 
     @BeforeEach
     void init() {
-        playerOne = new Player();
-        playerTwo = new Player();
+        playerOne = new Player("Player one");
+        playerTwo = new Player("Player two");
         game = new Game(playerOne, playerTwo);
     }
 
@@ -45,5 +45,20 @@ class GameTest {
         String score = game.showScore();
 
         Assertions.assertEquals("Deuce", score);
+    }
+
+    @Test
+    void should_return_advantage_when_player_one_have_4_points_and_player_two_have_3_points() {
+        playerOne.addPoint();
+        playerOne.addPoint();
+        playerOne.addPoint();
+        playerOne.addPoint();
+
+        playerTwo.addPoint();
+        playerTwo.addPoint();
+        playerTwo.addPoint();
+        String score = game.showScore();
+
+        Assertions.assertEquals("Player one: Advantage", score);
     }
 }
