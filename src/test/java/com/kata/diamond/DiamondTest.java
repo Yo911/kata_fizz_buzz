@@ -20,6 +20,7 @@ class DiamondTest {
 
     @AfterEach
     void end() {
+        originalOut.print(outContent.toString());
         System.setOut(originalOut);
     }
 
@@ -28,5 +29,12 @@ class DiamondTest {
         Diamond.printDiamond('A');
 
         Assertions.assertEquals("A", outContent.toString());
+    }
+
+    @Test
+    void should_print_diamond_with_B_letter() {
+        Diamond.printDiamond('B');
+
+        Assertions.assertEquals("\tA\t\nB\t\tB\n\tA", outContent.toString());
     }
 }
