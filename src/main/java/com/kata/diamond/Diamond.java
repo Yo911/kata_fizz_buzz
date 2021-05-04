@@ -3,20 +3,49 @@ package com.kata.diamond;
 public class Diamond {
 
     public static final String TAB = "\t";
-    
+
     public static final String LINE = "\n";
+
+    public static final char FIRST_CHAR = 'A';
 
     public static void printDiamond(String characterToPrintOnDiamon) {
         char character = characterToPrintOnDiamon.charAt(0);
-        if (character == 'C') {
-            System.out.print(TAB + "\t\tA" + LINE + "\t\tB\t\tB\n\tC\t\t\t\tC\n\t\tB\t\tB\n\t\t\tA");
+        int lengthDiamond = character - FIRST_CHAR + 1;
+        if (lengthDiamond == 1) {
+            System.out.print(character);
             return;
         }
-        if (character == 'B') {
-            System.out.print(TAB + "A" + LINE + "B\t\tB\n\tA");
-            return;
+        StringBuilder diamondBuilder = buildDiamond(lengthDiamond);
+        System.out.print(diamondBuilder.toString());
+    }
+
+    private static StringBuilder buildDiamond(int lengthDiamond) {
+        StringBuilder diamondBuilder = new StringBuilder();
+        char currentChar = FIRST_CHAR;
+        for (int i = 0; i < lengthDiamond; i++) {
+            if (i == 0) {
+                diamondBuilder.append(TAB.repeat(lengthDiamond)).append(currentChar).append(LINE);
+                currentChar++;
+                continue;
+            }
+            buildLineCurrentCharacter(lengthDiamond, diamondBuilder, currentChar, i);
+            currentChar++;
         }
-        System.out.print(character);
+        currentChar = (char) (FIRST_CHAR + lengthDiamond - 2);
+        for (int i = lengthDiamond - 2; i >= 0; i--) {
+            if (i == 0) {
+                diamondBuilder.append(TAB.repeat(lengthDiamond)).append(currentChar).append(LINE);
+                currentChar--;
+                continue;
+            }
+            buildLineCurrentCharacter(lengthDiamond, diamondBuilder, currentChar, i);
+            currentChar--;
+        }
+        return diamondBuilder;
+    }
+
+    private static void buildLineCurrentCharacter(int lengthDiamond, StringBuilder diamondBuilder, char currentChar, int i) {
+        diamondBuilder.append(TAB.repeat(lengthDiamond - i)).append(currentChar).append(TAB.repeat(i * 2)).append(currentChar).append(LINE);
     }
 
 }
