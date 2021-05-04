@@ -10,4 +10,11 @@ public class ScoreTest {
 
         Assertions.assertEquals("0", value);
     }
+
+    @Test
+    void should_return_love_when_one_point_score() {
+        String value = Score.getScore(1);
+
+        Assertions.assertEquals("Love", value);
+    }
 }
