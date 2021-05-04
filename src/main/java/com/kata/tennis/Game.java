@@ -11,9 +11,13 @@ public class Game {
     }
 
     public String showScore() {
-        if (playerOne.getPoint() == 3 && playerTwo.getPoint() == 3) {
+        if (isDeuceScore()) {
             return "Deuce";
         }
         return playerOne.getScore() + " : " + playerTwo.getScore();
+    }
+
+    private boolean isDeuceScore() {
+        return playerOne.getPoint() == 3 && playerTwo.getPoint() == 3;
     }
 }
