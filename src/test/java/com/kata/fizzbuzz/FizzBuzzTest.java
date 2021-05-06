@@ -13,4 +13,11 @@ class FizzBuzzTest {
         Assertions.assertEquals("4", result);
     }
 
+    @Test
+    void should_return_8_when_number_is_8() {
+        String result = FizzBuzz.isFizzBuzzNumber(8);
+
+        Assertions.assertEquals("8", result);
+    }
+
 }
