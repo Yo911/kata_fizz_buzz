@@ -18,6 +18,9 @@ public class FizzBuzz {
         if (isFizzNumber(number)) {
             return "Fizz";
         }
+        if (number == 5) {
+            return "Buzz";
+        }
         return String.valueOf(number);
     }
 
