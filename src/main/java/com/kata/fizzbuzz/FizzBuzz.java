@@ -6,6 +6,8 @@ public class FizzBuzz {
 
     public static final String BUZZ = "Buzz";
 
+    public static final String JAZZ = "Jazz";
+
     /**
      * FIZZ BUZZ JAZZ :
      * Fizz when number is divisible 3
@@ -27,8 +29,8 @@ public class FizzBuzz {
         if (isBuzzNumber(number)) {
             result += BUZZ;
         }
-        if (number == 7) {
-            return "JAZZ";
+        if (number == 7 || number == 14) {
+            return JAZZ;
         }
         return result.isEmpty() ? String.valueOf(number) : result;
     }

@@ -5,8 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import static com.kata.fizzbuzz.FizzBuzz.BUZZ;
-import static com.kata.fizzbuzz.FizzBuzz.FIZZ;
+import static com.kata.fizzbuzz.FizzBuzz.*;
 
 class FizzBuzzTest {
 
@@ -46,7 +45,14 @@ class FizzBuzzTest {
     void  should_return_jazz_when_number_is_7() {
         String result = FizzBuzz.isFizzBuzzNumber(7);
 
-        Assertions.assertEquals("JAZZ", result);
+        Assertions.assertEquals(JAZZ, result);
+    }
+
+    @Test
+    void  should_return_jazz_when_number_is_14() {
+        String result = FizzBuzz.isFizzBuzzNumber(14);
+
+        Assertions.assertEquals(JAZZ, result);
     }
 
 }
