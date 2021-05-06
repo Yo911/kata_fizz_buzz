@@ -41,16 +41,10 @@ class FizzBuzzTest {
         Assertions.assertEquals(FIZZ + BUZZ, result);
     }
 
-    @Test
-    void  should_return_jazz_when_number_is_7() {
-        String result = FizzBuzz.isFizzBuzzNumber(7);
-
-        Assertions.assertEquals(JAZZ, result);
-    }
-
-    @Test
-    void  should_return_jazz_when_number_is_14() {
-        String result = FizzBuzz.isFizzBuzzNumber(14);
+    @ParameterizedTest(name = "#{index} - should return fizzbuzz when number is {0}")
+    @ValueSource(ints = {7, 14, 28})
+    void should_return_jazz_when_number_is_divisible_by_7(int number) {
+        String result = FizzBuzz.isFizzBuzzNumber(number);
 
         Assertions.assertEquals(JAZZ, result);
     }
