@@ -27,4 +27,11 @@ class FizzBuzzTest {
         Assertions.assertEquals("Fizz", result);
     }
 
+    @Test
+    void should_return_fizz_when_number_is_6() {
+        String result = FizzBuzz.isFizzBuzzNumber(6);
+
+        Assertions.assertEquals("Fizz", result);
+    }
+
 }

@@ -15,7 +15,7 @@ public class FizzBuzz {
 
 
     public static String isFizzBuzzNumber(int number) {
-        if (number == 3) {
+        if (number == 3 || number == 6) {
             return "Fizz";
         }
         return String.valueOf(number);
