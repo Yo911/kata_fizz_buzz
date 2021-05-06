@@ -1,6 +1,11 @@
 package com.kata.fizzbuzz;
 
 public class FizzBuzz {
+
+    public static final String FIZZ = "Fizz";
+
+    public static final String BUZZ = "Buzz";
+
     /**
      * FIZZ BUZZ JAZZ :
      * Fizz when number is divisible 3
@@ -16,13 +21,13 @@ public class FizzBuzz {
 
     public static String isFizzBuzzNumber(int number) {
         if (number == 15) {
-            return "FizzBuzz";
+            return FIZZ + BUZZ;
         }
         if (isFizzNumber(number)) {
-            return "Fizz";
+            return FIZZ;
         }
         if (isBuzzNumber(number)) {
-            return "Buzz";
+            return BUZZ;
         }
         return String.valueOf(number);
     }
