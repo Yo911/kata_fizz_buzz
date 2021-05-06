@@ -20,7 +20,7 @@ public class FizzBuzz {
 
 
     public static String isFizzBuzzNumber(int number) {
-        if (number == 15 || number == 30) {
+        if (isFizzBuzz(number)) {
             return FIZZ + BUZZ;
         }
         if (isFizzNumber(number)) {
@@ -30,6 +30,10 @@ public class FizzBuzz {
             return BUZZ;
         }
         return String.valueOf(number);
+    }
+
+    private static boolean isFizzBuzz(int number) {
+        return isFizzNumber(number) && isBuzzNumber(number);
     }
 
     private static boolean isBuzzNumber(int number) {
