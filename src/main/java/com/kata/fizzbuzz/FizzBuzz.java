@@ -18,10 +18,14 @@ public class FizzBuzz {
         if (isFizzNumber(number)) {
             return "Fizz";
         }
-        if (number == 5 || number == 10 || number == 20) {
+        if (isBuzzNumber(number)) {
             return "Buzz";
         }
         return String.valueOf(number);
+    }
+
+    private static boolean isBuzzNumber(int number) {
+        return number % 5 == 0;
     }
 
     private static boolean isFizzNumber(int number) {
