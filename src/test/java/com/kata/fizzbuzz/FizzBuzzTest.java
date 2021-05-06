@@ -34,4 +34,11 @@ class FizzBuzzTest {
         Assertions.assertEquals("Fizz", result);
     }
 
+    @Test
+    void should_return_fizz_when_number_is_9() {
+        String result = FizzBuzz.isFizzBuzzNumber(9);
+
+        Assertions.assertEquals("Fizz", result);
+    }
+
 }
