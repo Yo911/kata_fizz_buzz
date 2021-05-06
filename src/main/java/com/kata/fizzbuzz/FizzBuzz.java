@@ -29,7 +29,7 @@ public class FizzBuzz {
         if (isBuzzNumber(number)) {
             result += BUZZ;
         }
-        if (number == 7 || number == 14) {
+        if (isJazzNumber(number)) {
             return JAZZ;
         }
         return result.isEmpty() ? String.valueOf(number) : result;
@@ -41,6 +41,10 @@ public class FizzBuzz {
 
     private static boolean isFizzNumber(int number) {
         return isDivisibleBy(number, 3);
+    }
+
+    private static boolean isJazzNumber(int number) {
+        return isDivisibleBy(number, 7);
     }
 
     private static boolean isDivisibleBy(int number, int denominator) {
