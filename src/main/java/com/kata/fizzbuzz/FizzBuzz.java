@@ -12,4 +12,10 @@ public class FizzBuzz {
      * FizzBuzzJazz when number is divisible 3 & 5 & 7
      * return the number when it's not divisible by 3, 5 or 7
      */
+
+
+    public static String isFizzBuzzNumber(int number) {
+        return String.valueOf(number);
+    }
+
 }
