@@ -25,11 +25,15 @@ public class FizzBuzz {
     }
 
     private static boolean isBuzzNumber(int number) {
-        return number % 5 == 0;
+        return isDivisibleBy(number, 5);
     }
 
     private static boolean isFizzNumber(int number) {
-        return number % 3 == 0;
+        return isDivisibleBy(number, 3);
+    }
+
+    private static boolean isDivisibleBy(int number, int denominator) {
+        return number % denominator == 0;
     }
 
 }
