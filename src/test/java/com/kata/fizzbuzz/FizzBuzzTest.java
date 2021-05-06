@@ -1,6 +1,7 @@
 package com.kata.fizzbuzz;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -28,6 +29,13 @@ class FizzBuzzTest {
         String result = FizzBuzz.isFizzBuzzNumber(number);
 
         Assertions.assertEquals("Buzz", result);
+    }
+
+    @Test
+    void should_return_fizzbuzz_when_number_is_15() {
+        String result = FizzBuzz.isFizzBuzzNumber(15);
+
+        Assertions.assertEquals("FizzBuzz", result);
     }
 
 }

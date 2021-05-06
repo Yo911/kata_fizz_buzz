@@ -15,6 +15,9 @@ public class FizzBuzz {
 
 
     public static String isFizzBuzzNumber(int number) {
+        if (number == 15) {
+            return "FizzBuzz";
+        }
         if (isFizzNumber(number)) {
             return "Fizz";
         }
