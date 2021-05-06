@@ -57,10 +57,10 @@ class FizzBuzzTest {
     }
 
     @Test
-    void should_return_fizzjazz_when_number_is_35() {
-        String result = FizzBuzz.isFizzBuzzNumber(35);
+    void should_return_fizzjazz_when_number_is_105() {
+        String result = FizzBuzz.isFizzBuzzNumber(105);
 
-        Assertions.assertEquals(BUZZ + JAZZ, result);
+        Assertions.assertEquals(FIZZ + BUZZ + JAZZ, result);
     }
 
 }
