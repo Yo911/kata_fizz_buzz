@@ -20,20 +20,14 @@ public class FizzBuzz {
 
 
     public static String isFizzBuzzNumber(int number) {
-        if (isFizzBuzz(number)) {
-            return FIZZ + BUZZ;
-        }
+        String result = "";
         if (isFizzNumber(number)) {
-            return FIZZ;
+            result += FIZZ;
         }
         if (isBuzzNumber(number)) {
-            return BUZZ;
+            result += BUZZ;
         }
-        return String.valueOf(number);
-    }
-
-    private static boolean isFizzBuzz(int number) {
-        return isFizzNumber(number) && isBuzzNumber(number);
+        return result.isEmpty() ? String.valueOf(number) : result;
     }
 
     private static boolean isBuzzNumber(int number) {
