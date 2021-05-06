@@ -27,6 +27,9 @@ public class FizzBuzz {
         if (isBuzzNumber(number)) {
             result += BUZZ;
         }
+        if (number == 7) {
+            return "JAZZ";
+        }
         return result.isEmpty() ? String.valueOf(number) : result;
     }
 
