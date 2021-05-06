@@ -49,4 +49,11 @@ class FizzBuzzTest {
         Assertions.assertEquals(JAZZ, result);
     }
 
+    @Test
+    void should_return_fizzjazz_when_number_is_21() {
+        String result = FizzBuzz.isFizzBuzzNumber(21);
+
+        Assertions.assertEquals(FIZZ + JAZZ, result);
+    }
+
 }

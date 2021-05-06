@@ -30,7 +30,7 @@ public class FizzBuzz {
             result += BUZZ;
         }
         if (isJazzNumber(number)) {
-            return JAZZ;
+            result += JAZZ;
         }
         return result.isEmpty() ? String.valueOf(number) : result;
     }
