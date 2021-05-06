@@ -20,4 +20,11 @@ class FizzBuzzTest {
         Assertions.assertEquals("8", result);
     }
 
+    @Test
+    void should_return_fizz_when_number_is_3() {
+        String result = FizzBuzz.isFizzBuzzNumber(3);
+
+        Assertions.assertEquals("Fizz", result);
+    }
+
 }
