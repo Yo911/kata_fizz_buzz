@@ -20,7 +20,7 @@ public class FizzBuzz {
 
 
     public static String isFizzBuzzNumber(int number) {
-        if (number == 15) {
+        if (number == 15 || number == 30) {
             return FIZZ + BUZZ;
         }
         if (isFizzNumber(number)) {
