@@ -10,16 +10,14 @@ public class Diamond {
 
     public static void printDiamond(String characterToPrintOnDiamon) {
         char character = characterToPrintOnDiamon.charAt(0);
-        int lengthDiamond = character - FIRST_CHAR + 1;
-        if (lengthDiamond == 1) {
-            System.out.print(character);
-            return;
-        }
-        StringBuilder diamondBuilder = buildDiamond(lengthDiamond);
-        System.out.print(diamondBuilder.toString());
+        System.out.print(buildDiamond(character));
     }
 
-    private static StringBuilder buildDiamond(int lengthDiamond) {
+    public static String buildDiamond(char character) {
+        int lengthDiamond = character - FIRST_CHAR + 1;
+        if (lengthDiamond == 1) {
+            return String.valueOf(character);
+        }
         StringBuilder diamondBuilder = new StringBuilder();
         char currentChar = FIRST_CHAR;
         for (int i = 0; i < lengthDiamond; i++) {
@@ -31,7 +29,7 @@ public class Diamond {
             buildLineCurrentCharacter(lengthDiamond, diamondBuilder, currentChar, i);
             currentChar--;
         }
-        return diamondBuilder;
+        return diamondBuilder.toString();
     }
 
     private static void buildLineCurrentCharacter(int lengthDiamond, StringBuilder diamondBuilder, char currentChar, int i) {
